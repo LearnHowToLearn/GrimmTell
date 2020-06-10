@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testOne</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="buttons"></div>
+    <p></p>
+    <!-- 2 -->
+    <!-- <div id="buttons">
+        <button>按1</button>
+        <button>按2</button>
+        <button>按3</button>
+        <button>按4</button>
+        <button>按5</button>
+    </div>
+    <p></p> -->
+    <script>
+        function showText(i) {
+            let pTag = document.querySelector('p'); //取得 p 節點
+            pTag.textContent = `按${i + 1}`; //p 節點塞入文字
+        }
+
+        let divTag = document.querySelector('div'); //取得 div 節點
+        for (let j = 1; j <= 10; j++) {
+            let btnTag = document.createElement('button'); //做一個 button tag
+            btnTag.textContent = `按${j}`; //button tag 塞入文字
+            divTag.appendChild(btnTag); //放入 div tag 中
+        }
+
+        let btns = document.querySelectorAll('button'); //取得按鈕的 NodeList
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () { showText(i) }); //對每個按鈕掛上監聽事件，用匿名函數傳遞 i
+        }
+
+        //2
+        // function showText(i) {
+        //     let pTag = document.querySelector('p');
+        //     pTag.textContent = `按${i + 1}`; //p 節點塞入文字
+        // }
+
+        // let btns = document.querySelectorAll('button');
+        // for (let i = 0; i < btns.length; i++) {
+        //     btns[i].addEventListener('click', function () { showText(i) }); //用匿名函數傳遞 i
+        // }
+
+        //1
+        // function showText(i) {
+        //     let pTag = document.querySelector('p');
+        //     pTag.textContent = `按${i + 1}`;
+        // }
+
+        // let btns = document.querySelectorAll('button');
+        // for (let i = 0; i < btns.length; i++) {
+        //     btns[i].addEventListener('click', showText(i));
+        // }
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

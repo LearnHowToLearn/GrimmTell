@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testThree</title>
+</head>
+
+<body>
+    <div id="cl" style="display: inline;">click here to show</div>
+    <ul id="list" style="display:none;">
+        <li><a href="#">网站1</li>
+        <li><a href="#">网站2</li>
+    </ul>
+    <script type="text/javascript">
+        var btn = document.getElementById("cl");
+        btn.onclick = function () {
+            var show = document.getElementById("list");
+            if (show.style.display == "block") {
+                show.style.display = "none";
+            } else {
+                show.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
