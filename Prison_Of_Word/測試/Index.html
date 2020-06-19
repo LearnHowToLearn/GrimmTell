@@ -173,10 +173,6 @@
       } else if (first.textContent == "寶箱" && second.textContent == "輸入" && third.textContent == "密碼") {
         document.getElementById("sentence").textContent = "密碼是...";
         document.getElementById("numericKeypad").style.display = "block";
-        if (combinationArray[1] == null) {
-          sentenceChange();
-        }
-        combinationArray[1] = 0;
       } else if (first.textContent == "我" && second.textContent == "輸入" && third.textContent == "密碼") {
         document.getElementById("sentence").textContent = "是要對輸入什麼密碼呢？(把\"我\"換成要輸入密碼的\"物品\")";
       } else if (first.textContent == "我" && second.textContent == "檢視" && third.textContent == "密碼") {
