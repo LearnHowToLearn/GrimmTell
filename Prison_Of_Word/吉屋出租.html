@@ -32,7 +32,7 @@
     </header> -->
 
         <!-- 文字顯示框 -->
-        <div id="showSentence" class="show-sentence">
+        <div id="showSentence" class="show-sentence" style="overflow: auto;">
             <h4 id="sentence" style="font-family: 'Noto Sans TC', sans-serif;">
                 時光機把「我」傳到了一個「房間」，「檢視」一下周圍也許會有可以用的東西
             </h4>
@@ -53,7 +53,7 @@
         </div>
 
         <!-- 詞彙庫 -->
-        <div id="total" class="words-library">
+        <div id="total" class="words-library" style="overflow: auto;">
             <!-- <ul class="nav nav-tabs" id="Tab" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" id="total-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
@@ -122,7 +122,7 @@
                 newbt.textContent = sentence.substring(ago_quotes + 1, after_quotes);//擷取前後括號中間的文字
                 total.appendChild(newbt);//添加按鈕到詞彙庫
                 if (newbt.textContent == "檢視" || newbt.textContent == "擦拭" || newbt.textContent == "打開") {//分辨按鈕是動詞還是名詞
-                    newbt.style.borderColor = "yellow";
+                    newbt.style.borderColor = "yellow";//動詞框的顏色
                     newbt.onclick = function () {//建立動詞按鈕功能
                         const second = document.getElementById("second");
                         if (second.textContent == "") {//判斷second格子是不是空的
@@ -213,6 +213,12 @@
                 document.getElementById("sentence").textContent = "小鐵盒的密碼是多少呢...？";
             } else if (first.textContent == "鑰匙" && second.textContent == "打開" && third.textContent == "抽屜") {
                 document.getElementById("sentence").textContent = "抽屜被打開了裡面放著一張「牛皮紙條」。逼逼逼 時光機發出聲響 時間要快到了！";
+                if (combinationArray[6] == null) {
+                    sentenceChange();
+                }
+                combinationArray[6] = 0;
+            } else if (first.textContent == "我" && second.textContent == "檢視" && third.textContent == "牛皮紙條") {
+                document.getElementById("sentence").textContent = "24°48'24.7\"N 120°58'34.8\"E";
             }
             //錯誤的組合
             else if (first.textContent == "我" && second.textContent == "打開" && third.textContent == "房間") {
@@ -231,8 +237,9 @@
                 document.getElementById("sentence").textContent = "手摩擦到鑰匙孔讓我手破皮了。";
             } else if (first.textContent == "我" && second.textContent == "擦拭" && third.textContent == "小鐵盒") {
                 document.getElementById("sentence").textContent = "鐵盒變亮了一點，但我手都快破皮了。";
-            } else if (first.textContent == "我" && second.textContent == "擦拭" && third.textContent == "紙條") {
+            } else if (first.textContent == "破布" && second.textContent == "擦拭" && third.textContent == "紙條") {
                 document.getElementById("sentence").textContent = "紙條被我弄破了！";
+                deleteButton("紙條");
             }
             else {
                 if (first.textContent != "" && second.textContent != "" && third.textContent != "") {
@@ -246,6 +253,18 @@
             wordKind1.textContent = "";
             wordKind2.textContent = "";
             wordKind3.textContent = "";
+        }
+
+        //刪除按鈕
+        function deleteButton(buttonKind) {
+            var totalButton = document.querySelectorAll("button");
+            alert(buttonKind);
+            // for (let i = 0; i < totalButton.length; i++) {
+            //     if (totalButton[i].textContent.indexOf(buttonKind) == -1) {
+            //         var obj = obj.parentNode;
+            //         obj.remove(totalButton[i]);
+            //     }
+            // }
         }
 
         //紙條顯示/隱藏
