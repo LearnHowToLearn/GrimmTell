@@ -7,6 +7,7 @@ html {
   
   body {
     margin: 0;
+    background: black;/*想看區塊就改這個的顏色*/
   }
 
   p {
@@ -19,7 +20,8 @@ html {
     width: 500px; /*網頁內容顯示寬度*/
     margin: 0 auto; /*邊界寬度 上下0 左右auto*/
     padding: 0;
-    background: brown;
+    background: black;
+    height: auto;
   }
 
   .show-sentence {
@@ -39,34 +41,53 @@ html {
       padding: 1em;
       max-width: 20em;
       font: 130%/1.6 Baskerville, Palatino, serif;
+      border:2px solid white;
+      background: black;
+      color: white;
+      /* overflow: auto;
+      scrollbar-arrow-color: transparent;
+scrollbar-face-color: transparent;
+scrollbar-3dlight-color: transparent;
+scrollbar-highlight-color: transparent;
+scrollbar-shadow-color: transparent;
+scrollbar-darkshadow-color: transparent;
+scrollbar-track-color: transparent; */
   }
 
   .take-three-words {
-      width: 400px;
-      height: 80px;
-      margin: 10px auto;
-      background: purple;
-      display: flex;
-      justify-content: space-between; /*三個文字框平均散開*/
-      align-items: center; /*讓文字框垂直置中*/
+    width: 400px;
+    height: 80px;
+    margin: 10px auto;
+    background: black;
+    display: flex;
+    justify-content: space-between; /*三個文字框平均散開*/
+    align-items: center; /*讓文字框垂直置中*/
   }
 
   .take-three-words .first-word {
-      width: 120px;
+      width: 115px;
       height: 50px;
-      background: seagreen;
+      padding: 1px;
+      border:2px solid white;
+      background: black;
+      color: white;
   }
 
   .take-three-words .second-word {
-    width: 120px;
+    width: 115px;
     height: 50px;
-    background: seagreen;
-}
+    border:2px solid white;
+    background: black;
+    color: white;
+  }
+
 
 .take-three-words .third-word {
-    width: 120px;
+    width: 115px;
     height: 50px;
-    background: seagreen;
+    border:2px solid white;
+    background: black;
+    color: white;
 }
 
 .words-library {
@@ -75,18 +96,20 @@ html {
     height: 300px;
     background: #ffe4e1;
     margin: 0 auto;
-    
+    border:2px solid white;
+    background: black;
 }
 
 button{
   margin: 10px;
   width: 28%;
   font-size: 17px;
+  background: black;
+  color: white;
   /* color: blueviolet; */
   border-width: 10px;
-  border-color: red;
+  border-color: rgba(255,0,0,0.3);
   font-family: "Noto Sans TC", sans-serif;
-
 }
 
   /* .show-sentence p {
@@ -143,4 +166,10 @@ button{
 
 .btn{
   left: 25px;
+}
+
+.deleteButton{
+  border:2px solid white;
+  color: white;
+  background: black;
 }

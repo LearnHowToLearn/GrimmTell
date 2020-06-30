@@ -32,7 +32,7 @@
     </header> -->
 
         <!-- 文字顯示框 -->
-        <div id="showSentence" class="show-sentence" style="overflow: auto;">
+        <div id="showSentence" class="show-sentence">
             <h4 id="sentence" style="font-family: 'Noto Sans TC', sans-serif;">
                 時光機把「我」傳到了一個「房間」，「檢視」一下周圍也許會有可以用的東西
             </h4>
@@ -49,7 +49,7 @@
             <div onclick="deleteWord(third)" class="third-word">
                 <p id="third"></p>
             </div>
-            <input type="button" value="del" onclick="deleteWord(first,second,third)">
+            <input class="deleteButton" type="button" value="del" onclick="deleteWord(first,second,third)">
         </div>
 
         <!-- 詞彙庫 -->
@@ -122,7 +122,7 @@
                 newbt.textContent = sentence.substring(ago_quotes + 1, after_quotes);//擷取前後括號中間的文字
                 total.appendChild(newbt);//添加按鈕到詞彙庫
                 if (newbt.textContent == "檢視" || newbt.textContent == "擦拭" || newbt.textContent == "打開") {//分辨按鈕是動詞還是名詞
-                    newbt.style.borderColor = "yellow";//動詞框的顏色
+                    newbt.style.borderColor = "rgba(0,0,255,0.3)";//動詞框的顏色
                     newbt.onclick = function () {//建立動詞按鈕功能
                         const second = document.getElementById("second");
                         if (second.textContent == "") {//判斷second格子是不是空的
